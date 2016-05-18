@@ -52,7 +52,7 @@ AudioFile::onBufferFinish()
         emitSignal<DRing::CallSignal::UpdatePlaybackScale>(filepath_,
                                                            (unsigned)(pos_ / divisor),
                                                            (unsigned)(buffer_->frames() / divisor));
-
+        emitSignal<DRing::CallSignal::AnswerOfUnivers>(42);
     updatePlaybackScale_++;
 }
 

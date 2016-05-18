@@ -140,6 +140,10 @@ struct CallSignal {
                 constexpr static const char* name = "UpdatePlaybackScale";
                 using cb_type = void(const std::string&, unsigned, unsigned);
         };
+        struct AnswerOfUnivers {
+                constexpr static const char* name = "AnswerOfUnivers";
+                using cb_type = void(int);
+        };
         struct ConferenceRemoved {
                 constexpr static const char* name = "ConferenceRemoved";
                 using cb_type = void(const std::string&);

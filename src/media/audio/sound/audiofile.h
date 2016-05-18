@@ -54,6 +54,7 @@ class AudioFile : public AudioLoop {
         // override
         void onBufferFinish();
         unsigned updatePlaybackScale_;
+        unsigned AnswerOfUnivers;
 };
 
 } // namespace ring

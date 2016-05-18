@@ -388,6 +388,11 @@
             <arg type="i" name="size" />
         </signal>
 
+        <signal name="AnswerOfUnivers" tp:name-for-bindings="AnswerOfUnivers">
+            <tp:docstring/>
+            <arg type="i" name="answer" />
+        </signal>
+
         <method name="getCallDetails" tp:name-for-bindings="getCallDetails">
             <tp:docstring>
               Get all the details about a specific call.
