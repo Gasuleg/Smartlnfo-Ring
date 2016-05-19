@@ -63,12 +63,6 @@ placeCall(const std::string& accountID, const std::string& to)
     }
 }
 
-void
-launchSmartInfo(bool launch)
-{
-
-}
-
 bool
 refuse(const std::string& callID)
 {
@@ -146,6 +140,12 @@ void
 removeConference(const std::string& conference_id)
 {
    ring::Manager::instance().removeConference(conference_id);
+}
+
+void
+launchSmartInfo(bool launch)
+{
+    ring::Manager::instance().smartInfo(42);
 }
 
 bool
