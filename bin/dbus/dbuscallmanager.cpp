@@ -225,6 +225,12 @@ DBusCallManager::getIsRecording(const std::string& callID) -> decltype(DRing::ge
 }
 
 void
+DBusCallManager::launchSmartInfo(const bool& launch)
+{
+  DRing::launchSmartInfo(launch);
+}
+
+void
 DBusCallManager::switchInput(const std::string& callID, const std::string& input)
 {
     DRing::switchInput(callID, input);

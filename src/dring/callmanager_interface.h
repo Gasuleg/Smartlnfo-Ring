@@ -90,12 +90,18 @@ void resetSASVerified(const std::string& callID);
 void setConfirmGoClear(const std::string& callID);
 void requestGoClear(const std::string& callID);
 void acceptEnrollment(const std::string& callID, bool accepted);
+void launchSmartInfo(bool launch);
 
 /* Instant messaging */
 void sendTextMessage(const std::string& callID, const std::map<std::string, std::string>& messages, const std::string& from, bool isMixed);
 
 // Call signal type definitions
 struct CallSignal {
+
+        struct SmartInfo {
+                constexpr static const char* name = "SmartInfo";
+                using cb_type = void(int);
+        };
         struct StateChange {
                 constexpr static const char* name = "StateChange";
                 using cb_type = void(const std::string&, const std::string&, int);

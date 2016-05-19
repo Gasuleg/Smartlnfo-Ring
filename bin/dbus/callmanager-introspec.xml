@@ -344,6 +344,17 @@
             </arg>
         </method>
 
+        <method name="launchSmartInfo" tp:name-for-bindings="launchSmartInfo">
+            <tp:docstring>
+              Launch the SmartInfo tool.
+            </tp:docstring>
+            <arg type="b" name="launch" direction="in">
+              <tp:docstring>
+                Active the tool
+              </tp:docstring>
+            </arg>
+        </method>
+
         <method name="getIsRecording" tp:name-for-bindings="getIsRecording">
             <tp:docstring>
               Tells whether or not a call is being recorded.

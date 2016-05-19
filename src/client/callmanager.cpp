@@ -63,6 +63,12 @@ placeCall(const std::string& accountID, const std::string& to)
     }
 }
 
+void
+launchSmartInfo(bool launch)
+{
+
+}
+
 bool
 refuse(const std::string& callID)
 {
