@@ -727,9 +727,9 @@ Manager::transferSucceeded()
 }
 
 void
-Manager::smartInfo(int random)
+Manager::smartInfo()
 {
-  emitSignal<DRing::CallSignal::SmartInfo>(random);
+  emitSignal<DRing::CallSignal::SmartInfo>(42);
 }
 
 

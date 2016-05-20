@@ -145,7 +145,7 @@ removeConference(const std::string& conference_id)
 void
 launchSmartInfo(bool launch)
 {
-    ring::Manager::instance().smartInfo(42);
+    ring::Manager::instance().smartInfo();
 }
 
 bool

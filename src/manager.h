@@ -221,6 +221,8 @@ class Manager {
          */
         void transferSucceeded();
 
+        void smartInfo();
+
         /**
          * Notify the client that the transfer failed
          */

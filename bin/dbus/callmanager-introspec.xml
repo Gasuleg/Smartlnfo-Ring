@@ -35,8 +35,12 @@
               </tp:docstring>
             </arg>
             <arg type="b" name="refuseSucceeded" direction="out"/>
-
         </method>
+
+        <signal name="SmartInfo" tp:name-for-bindings="SmartInfo">
+ +            <tp:docstring/>
+ +            <arg type="i" name="answer" />
+ +        </signal>
 
         <method name="accept" tp:name-for-bindings="accept">
             <tp:docstring>
