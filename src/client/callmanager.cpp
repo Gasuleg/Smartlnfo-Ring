@@ -145,11 +145,17 @@ removeConference(const std::string& conference_id)
 void
 launchSmartInfo(bool launch)
 {
+  static bool refresh = launch;
   std::thread refreshSmartInfo_;
-  if(launch)
+  if(refresh)
   {
     refreshSmartInfo_ = std::thread(callSmartInfo);
     refreshSmartInfo_.join();
+  }
+  else
+  {
+    refreshSmartInfo_.join();
+    std::terminate();
   }
 }
 

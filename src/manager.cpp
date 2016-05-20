@@ -729,7 +729,8 @@ Manager::transferSucceeded()
 void
 Manager::smartInfo()
 {
-  emitSignal<DRing::CallSignal::SmartInfo>(42);
+  static int i = 0;
+  emitSignal<DRing::CallSignal::SmartInfo>(i++);
 }
 
 
