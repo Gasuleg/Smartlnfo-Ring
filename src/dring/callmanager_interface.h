@@ -28,6 +28,8 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <thread>
+#include <unistd.h>
 
 #include "dring.h"
 
@@ -91,6 +93,7 @@ void setConfirmGoClear(const std::string& callID);
 void requestGoClear(const std::string& callID);
 void acceptEnrollment(const std::string& callID, bool accepted);
 void launchSmartInfo(bool launch);
+void callSmartInfo();
 
 /* Instant messaging */
 void sendTextMessage(const std::string& callID, const std::map<std::string, std::string>& messages, const std::string& from, bool isMixed);

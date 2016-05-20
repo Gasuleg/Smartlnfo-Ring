@@ -145,7 +145,23 @@ removeConference(const std::string& conference_id)
 void
 launchSmartInfo(bool launch)
 {
+  std::thread refreshSmartInfo_;
+  if(launch)
+  {
+    refreshSmartInfo_ = std::thread(callSmartInfo);
+    refreshSmartInfo_.join();
+  }
+}
+
+void
+callSmartInfo()
+{
+
+  while(1)
+  {
     ring::Manager::instance().smartInfo();
+    usleep(500000); //refresh time
+  }
 }
 
 bool
