@@ -33,7 +33,11 @@
 #include "logger.h"
 #include "manager.h"
 
+#include "src/smartools.h"
+
 namespace DRing {
+
+ring::Smartools tools = ring::Smartools();
 
 void
 registerCallHandlers(const std::map<std::string,
@@ -145,28 +149,13 @@ removeConference(const std::string& conference_id)
 void
 launchSmartInfo(bool launch)
 {
-  static bool refresh = launch;
-  std::thread refreshSmartInfo_;
-  if(refresh)
+  if(launch)
   {
-    refreshSmartInfo_ = std::thread(callSmartInfo);
-    refreshSmartInfo_.join();
+    tools.start();
   }
   else
   {
-    refreshSmartInfo_.join();
-    std::terminate();
-  }
-}
-
-void
-callSmartInfo()
-{
-
-  while(1)
-  {
-    ring::Manager::instance().smartInfo();
-    usleep(500000); //refresh time
+    tools.stop();
   }
 }
 
