@@ -20,16 +20,20 @@
 #include "smartools.h"
 
  namespace ring {
-   Smartools::Smartools()
+   Smartools::Smartools(int refreshTimeMs)
    : loop_([this] { return true; },[this] { process(); },[] {})
    {
-
+     this -> refreshTime = refreshTimeMs;
    }
    void
    Smartools::process()
    {
+     std::system("x = top -n1 -b |grep ring | cut -c50-53 |paste -sd+ |sed 's/,/\./g' |bc");
+     const char *s = ::getenv("x");
+     std::cout << s << std::endl;
+     std::system("echo ok");
      ring::Manager::instance().smartInfo();
-     std::this_thread::sleep_for(SLEEP_TIME);
+     std::this_thread::sleep_for(std::chrono::milliseconds(refreshTime));
    }
 
    void
@@ -41,7 +45,8 @@
    void
    Smartools::stop()
    {
-     loop_.exit();
+     std::terminate();
+     //loop_.exit();
    }
 
  }

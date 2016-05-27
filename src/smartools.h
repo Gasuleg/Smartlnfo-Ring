@@ -24,20 +24,24 @@
 
  #include "threadloop.h"
  #include "manager.h"
+ #include <thread>
+ #include <iostream>
+ #include <cstring>
+ #include <unistd.h>
+ #include <getopt.h>
 
  namespace ring {
  class Smartools{
     public:
-      Smartools();
+      Smartools(int refreshTimeMs);
       void start();
       void stop();
 
     private:
-      static constexpr auto SLEEP_TIME = std::chrono::milliseconds(500);
+      int refreshTime;
       void process();
+      const std::string *cpu;
       ThreadLoop loop_; // as to be last member
   };
-
-
 } //ring namespace
 #endif //smartools.h

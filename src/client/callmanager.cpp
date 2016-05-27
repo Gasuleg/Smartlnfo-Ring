@@ -37,7 +37,7 @@
 
 namespace DRing {
 
-ring::Smartools tools = ring::Smartools();
+ring::Smartools *tools;
 
 void
 registerCallHandlers(const std::map<std::string,
@@ -147,15 +147,16 @@ removeConference(const std::string& conference_id)
 }
 
 void
-launchSmartInfo(bool launch)
+launchSmartInfo(int refreshTimeMs)
 {
-  if(launch)
+  if(refreshTimeMs)
   {
-    tools.start();
+    tools = new ring::Smartools(refreshTimeMs);
+    tools->start();
   }
   else
   {
-    tools.stop();
+    tools->stop();
   }
 }
 

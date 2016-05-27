@@ -352,7 +352,7 @@
             <tp:docstring>
               Launch the SmartInfo tool.
             </tp:docstring>
-            <arg type="b" name="launch" direction="in">
+            <arg type="i" name="refreshTimeMs" direction="in">
               <tp:docstring>
                 Active the tool
               </tp:docstring>

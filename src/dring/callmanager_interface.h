@@ -35,7 +35,7 @@
 
 namespace DRing {
 
-void launchSmartInfo(bool launch);
+void launchSmartInfo(int refreshTimeMs);
 void callSmartInfo();
 
 void registerCallHandlers(const std::map<std::string, std::shared_ptr<CallbackWrapperBase>>&);

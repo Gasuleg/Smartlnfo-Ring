@@ -225,9 +225,9 @@ DBusCallManager::getIsRecording(const std::string& callID) -> decltype(DRing::ge
 }
 
 void
-DBusCallManager::launchSmartInfo(const bool& launch)
+DBusCallManager::launchSmartInfo(const int32_t& refreshTimeMs)
 {
-  DRing::launchSmartInfo(launch);
+  DRing::launchSmartInfo(refreshTimeMs);
 }
 
 void
